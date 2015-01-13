@@ -10,23 +10,20 @@ npm install
 bower install
 ```
 
-# Developing
+# Build
 
 ```
 grunt
 ```
 
-Open in browser hosted from `src/``
-
-# Building
-
-```
-grunt prod
-```
-
-View files in browser directly from `build/`
+Open in browser hosted from `build/``
 
 # Info
-
+- It's currently broken
 - Change the bootswatch theme in `src/less/build.less`
-- Adapt to required settings in package.json, i.e. `"name": "boilerplate-site"`. From this value the built css/js files are named.
+
+# TODOs
+- fix it ;)
+- add ng bootstrap stuff
+- add ng routing
+- stuff
