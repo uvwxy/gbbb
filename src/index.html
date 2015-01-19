@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="App">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,24 +8,38 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Fixed Top Navbar Example for Bootstrap</title>
+    <title>GBBB</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="css/app.css" rel="stylesheet"/>
-    <link rel="stylesheet/less" type="text/css" href="less/app.less"/>
-
-    <script src="js/app.min.js" rel="stylesheet"></script>
 </head>
 
-<body>
+<body ng-controller="ctrlMain">
+
+<!-- HEADER AND NAVBAR -->
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">GBBB</a>
+            </div>
+
+            <ul class="nav navbar-nav">
+                <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fa fa-user"></i> About</a></li>
+                <li><a href="#contact"><i class="fa fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
+<div id="main">
+    <div ng-view></div>
+</div>
 
 
-<!-- /container -->
-
-<!--SCRIPTS-->
-<script src="js/libs.min.js"></script>
-<script src="js/app.min.js"></script>
-<!--SCRIPTS END-->
+<script src="js/libs.js"></script>
+<script src="js/app.js"></script>
 
 </body>
 </html>

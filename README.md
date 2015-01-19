@@ -1,7 +1,7 @@
 gbbb
 ====
 
-Grunt Bower Bootstrap Boilerplate
+Grunt Bower Bootstrap [Angular, Angular-Route, Fontawesome, Less] Boilerplate
 
 # Setup
 

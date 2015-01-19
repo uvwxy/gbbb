@@ -21,6 +21,13 @@ module.exports = function (grunt) {
                 dest: 'build/fonts/',
                 flatten: true
             },
+            fontawesome: {
+                expand: true,
+                cwd: './',
+                src: 'bower_components/fontawesome/fonts/*',
+                dest: 'build/fonts/',
+                flatten: true
+            },
             html: {
                 expand: true,
                 cwd: './src',
@@ -50,18 +57,28 @@ module.exports = function (grunt) {
                 files: {
                     "build/css/app.css": "src/less/app.less"
                 }
+            },
+            dev: {
+                options: {
+                    cleancss: false
+                },
+                files: {
+                    "build/css/app.css": "src/less/app.less"
+                }
             }
         },
         bower_concat: {
             all: {
                 dest: 'build/js/libs.js', // css is built via less task
                 exclude: [
-                    'bootswatch' // has no js
+                    'bootswatch', // has no js
+                    'fontawesome' // has no js
                 ],
                 dependencies: {
                     'bootstrap': 'jquery',
                     'less': 'jquery',
-                    'angular': 'jquery'
+                    'angular': 'jquery',
+                    'angular-route': 'angular'
                 },
                 bowerOptions: {
                     relative: false
@@ -79,5 +96,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-bower-concat');
 
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'concat', 'bower_concat', 'uglify', 'less:prod', 'copy']);
+    grunt.registerTask('default', ['clean', 'concat', 'bower_concat', 'less:dev', 'copy']);
+    grunt.registerTask('prod', ['clean', 'concat', 'bower_concat', 'uglify', 'less:prod', 'copy']);
+
 };
