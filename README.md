@@ -16,7 +16,7 @@ bower install
 grunt
 ```
 
-Open in browser hosted from `build/``
+Open in browser hosted from `build/`
 
 # Info
 - It's currently broken
