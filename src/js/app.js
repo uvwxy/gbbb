@@ -1,5 +1,5 @@
 
-var App = angular.module('App', ['ngRoute']);
+var App = angular.module('App', ['ngRoute','ui']);
 
 App.controller('ctrlMain', function($scope) {
     $scope.message = 'Hello. World.';
@@ -12,7 +12,6 @@ App.controller('ctrlAbout', function($scope) {
 App.controller('ctrlContact', function($scope) {
     $scope.message = 'Hello. Contact.';
 });
-
 
 // configure our routes
 App.config(function($routeProvider) {

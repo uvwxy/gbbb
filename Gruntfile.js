@@ -72,16 +72,21 @@ module.exports = function (grunt) {
                 dest: 'build/js/libs.js', // css is built via less task
                 exclude: [
                     'bootswatch', // has no js
-                    'fontawesome' // has no js
+                    'fontawesome', // has no js
+                    'less'
                 ],
                 dependencies: {
                     'bootstrap': 'jquery',
-                    'less': 'jquery',
                     'angular': 'jquery',
-                    'angular-route': 'angular'
+                    'angular-route': 'angular',
+                    'angular-ui': ['angular','bootstrap'],
+                    'angular-ui-bootstrap':['angular-ui']
                 },
                 bowerOptions: {
                     relative: false
+                },
+                mainFiles: {
+                    'angular-ui': ['build/angular-ui.js', 'build/angular-ui-ieshiv.js']
                 }
             }
         }
